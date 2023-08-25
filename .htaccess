@@ -1,0 +1,14 @@
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION BEGIN
+PassengerAppRoot "/home/a2zcyber/vmc.a2zcyberpark.com/vmc"
+PassengerBaseURI "/"
+PassengerPython "/home/a2zcyber/virtualenv/vmc.a2zcyberpark.com/vmc/3.9/bin/python"
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION END
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /subdirectory
+RewriteRule ^index\.html$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-l
+RewriteRule . /index.html [L]
+</IfModule>
